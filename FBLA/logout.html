@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged Out - Upclicker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <ul>
+            <li class="logo">
+                <a href="about.html">
+                    <img src="logo.png" alt="Company Logo" class="navbar-logo">
+                </a>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="postings.html">Job Postings</a></li>
+            <li><a href="employer.html">Submit Job Offer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="logout.html" class="active" class="logout-btn">Logout</a></li>
+        </ul>
+    </div>
+    <script>
+        // Check if the user is an admin on page load
+        window.onload = function() {
+            const isAdmin = localStorage.getItem('isAdmin');
+            if (isAdmin === 'true') {
+                document.getElementById('adminLink').style.display = 'inline'; // Show admin link
+            }
+        }
+    </script>
+    <!-- Logout Confirmation Section -->
+    <section class="logout-message">
+        <h1>You Have Successfully Logged Out</h1>
+        <p>Thank you for using Upclicker. We hope to see you back soon!</p>
+        <a href="login.html" class="login-btn">Log In</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Upclicker (Navin Majji, Mithun Gopinath). FBLA WEB DEV.</p>
+    </footer>
+
+</body>
+</html>
